@@ -124,7 +124,7 @@ package net.systemeD.potlatch2.controller {
 					return null;
 				} else if (event.type == MouseEvent.MOUSE_DOWN && paint.interactive) {
 					if      (entity is Way   ) { return new SelectedWay(entity as Way, paint); }
-					else if (entity is Node  ) { if (!entity.hasParentWays) return new SelectedPOINode(entity as Node, paint); }
+					else if (entity is Node  ) { return new SelectedPOINode(entity as Node, paint); }
 					else if (entity is Marker) { return new SelectedMarker(entity as Marker, paint); }
 				} else if ( event.type == MouseEvent.MOUSE_UP && !event.ctrlKey) {
 					return (this is NoSelection) ? null : new NoSelection();
